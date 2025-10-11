@@ -29,7 +29,7 @@ import logging
 from typing import Tuple, Dict, Union
 import os
 
-# ---- Consistent paths: JSON files live next to this script ----
+# Consistent paths: JSON files live next to this script 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 INPUT_FILE = os.path.join(BASE_DIR, "cities.json")        # input list of cities
 OUTPUT_FILE = os.path.join(BASE_DIR, "coordinates.json")  # output coordinates
@@ -44,7 +44,7 @@ RETRIES = 3
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
 
-async def get_coordinates(session: aiohttp.ClientSession, city: str, semaphore: asyncio.Semaphore) -> Tuple[str, Dict[str, Union[str, None]]]:
+async def get_coordinates(session: aiohttp.ClientSession, city: str, semaphore: asyncio.Semaphore) -> tuple[str, dict[str, Union[str, None]]]:
     """
     Query Nominatim for one city (with concurrency limit + retries).
     """
