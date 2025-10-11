@@ -5,8 +5,9 @@
 Ce projet a été réalisé dans le cadre du **Bootcamp Jedha Data Sc. & Eng. Fullstack (Bloc 1 — Build & Manage a Data Infrastructure)**.  
 L’objectif est d’aider l’équipe marketing de **Kayak** à recommander les meilleures destinations de voyage en France, en se basant sur :
 
-- les **conditions météorologiques**,
-- la **disponibilité et les notes des hôtels**.
+- Le top 35 des villes à visiter en France selon One_Week_In.com
+- Les **conditions météorologiques**,
+- La **disponibilité et les notes des hôtels**.
 
 Le projet couvre l’ensemble d’une chaîne de traitement de données (**pipeline**) :
 
