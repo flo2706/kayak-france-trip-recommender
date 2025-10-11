@@ -1,4 +1,4 @@
-# 🌍 Projet Kayak — Infrastructure de Données
+# Projet Kayak — Infrastructure de Données
 
 ## 📖 Contexte du projet
 
@@ -13,29 +13,29 @@ Le projet couvre l’ensemble d’une chaîne de traitement de données (**pipel
 1. Extraction des données (scraping + API)
 2. Transformation et nettoyage des données
 3. Chargement dans un **Data Lake (S3)** et un **Data Warehouse (PostgreSQL sur AWS RDS)**
-4. Visualisation des meilleures destinations et hôtels avec **Plotly**
+4. Visualisation des meilleures destinations et hôtels avec **Plotly** et **Streamlit**
 
 ---
 
-## 🛠️ Stack technique
+## Stack technique
 
 - **Python** : Scrapy, Requests, Pandas, Psycopg2, Asyncio
 - **APIs** : OpenWeather OneCall 3.0, Nominatim (OpenStreetMap)
 - **Base de données** : PostgreSQL (hébergée sur AWS RDS)
 - **Data Lake** : AWS S3
 - **ETL** : Scripts Python
-- **Visualisation** : Plotly
+- **Visualisation** : Plotly et Streamlit
 
 ---
 
-⚠️ **Important :**
+**Important :**
 
 - Les fichiers complets (scraping et CSV) **ne sont pas inclus** pour des raisons de **RGPD**.
 - Des **échantillons** (`sample/`) de 5 lignes sont fournis pour tester le pipeline.
 
 ---
 
-## ⚙️ Installation et configuration
+## Installation et configuration
 
 Le projet utilise un fichier `.env` pour stocker toutes les clés et identifiants nécessaires.
 
