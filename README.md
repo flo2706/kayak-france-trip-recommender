@@ -36,7 +36,7 @@ Le projet couvre l’ensemble d’une chaîne de traitement de données (**pipel
 
 ---
 
-## Installation et configuration
+## Configuration
 
 Le projet utilise un fichier `.env` pour stocker toutes les clés et identifiants nécessaires.
 
