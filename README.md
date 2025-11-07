@@ -4,8 +4,7 @@
 <p align="center"><strong>Une étude de cas :</strong></p>
 
 <p align="center">
-  Projet Kayak — <em>Infrastructure & Pipeline de Données pour la Recommandation Touristique</em>
-Speed Dating – <em>Qu’est-ce qui pousse à dire oui à un second rendez-vous ?</em> <br>
+  Projet Kayak — <em>Infrastructure & Pipeline de Données pour la Recommandation Touristique</em><br>
 </p>
 
 
