@@ -1,6 +1,13 @@
-# Projet Kayak — Infrastructure & Pipeline de Données pour la Recommandation Touristique  
+<h1 align="center">Jedha's ML Engineer Certificate</h1>
+<h2 align="center">Bloc 1 : Construire et gérer une infrastructure de données</h2>
 
-_Projet réalisé dans le cadre du **Bootcamp Jedha Data Sc. & Eng - Fullstack — Bloc 1 : Build & Manage a Data Infrastructure**._
+<p align="center"><strong>Une étude de cas :</strong></p>
+
+<p align="center">
+  Projet Kayak — <em>Infrastructure & Pipeline de Données pour la Recommandation Touristique</em>
+Speed Dating – <em>Qu’est-ce qui pousse à dire oui à un second rendez-vous ?</em> <br>
+</p>
+
 
 ---
 
