@@ -57,43 +57,35 @@ def load_data(path: str) -> pd.DataFrame:
 # Load data.
 df = load_data(CSV_PATH)
 
-# Page title.
-st.markdown(
-    (
-        "<h1 style='text-align:center; margin-top:0;'>"
-        "Top Hotels by City (France)"
-        "</h1>"
-    ),
-    unsafe_allow_html=True,
-)
 
 # Sidebar filters.
 with st.sidebar:
-    st.markdown("### Filters")
+    st.markdown("### Filtres")
     cities = sorted(df["city_name"].dropna().unique())
-    selected_city = st.selectbox("Choose a city", cities, index=0)
-    min_rating = st.slider("Minimum rating", 0.0, 10.0, 8.0, 0.1)
-    top_n = st.slider("Number of hotels", 5, 30, 20, 5)
+    selected_city = st.selectbox("Choisir une ville", cities, index=0)
+    min_rating = st.slider("Note minimale", 6.0, 10.0, 9.0, 0.1)
+    top_n = st.slider("Nombre d'hôtels", 5, 25, 20, 5)
 
-# Filter & sort.
+# Filter & sort
 city_df = (
     df[df["city_name"] == selected_city]
     .sort_values(by="hotel_rating", ascending=False)
 )
 city_df = city_df[city_df["hotel_rating"] >= min_rating].head(top_n)
 
-# Empty state.
+# Empty state
 if city_df.empty:
-    st.warning(f"No hotels meeting the criteria in **{selected_city}**.")
+    st.warning(f"Aucun hôtel ne correspond aux critères pour **{selected_city}**.")
     st.stop()
 
 # City title.
 nb_hotels = len(city_df)
 st.markdown(
-    (
-        f"<h2 style='text-align:center;'>Top {nb_hotels} Hotels in "
-        f"{html.escape(selected_city)}</h2>"
-    ),
+    f"""
+    <h1 style='text-align:center; margin-bottom:30px;'>
+        Top {nb_hotels} Hôtels à {html.escape(selected_city)}
+    </h1>
+    """,
     unsafe_allow_html=True,
 )
 
@@ -123,10 +115,10 @@ for _, row in city_df.iterrows():
     popup_html = f"""
     <div style="font-size:13px; line-height:1.3;">
       <strong>{safe_name}</strong><br>
-      <em>Rating:</em> {rating_txt}<br>
+      <em>Note:</em> {rating_txt}<br>
       <em>Description:</em> {safe_desc}<br>
       <a href="{html.escape(str(url))}" target="_blank"
-         rel="noopener noreferrer">🔗 View on Booking</a>
+         rel="noopener noreferrer">🔗 Voir sur Booking</a>
     </div>
     """
 
@@ -143,4 +135,4 @@ for _, row in city_df.iterrows():
 st_folium(hotel_map, width=1000, height=600)
 
 # Legend.
-st.markdown("**Legend:** 🟢 ≥ 9.0 🟠 8.0–8.9 🔴 < 8.0")
+st.markdown("**Légende:** 🟢 ≥ 9.0 🟠 8.0–8.9 🔴 < 8.0")

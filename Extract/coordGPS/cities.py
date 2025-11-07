@@ -1,7 +1,7 @@
 import json
 import os
 
-# Always resolve paths relative to this script's location
+# Define the base directory where the script is located
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def save_cities_to_json(cities, file_name="cities.json"):

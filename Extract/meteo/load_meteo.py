@@ -21,7 +21,7 @@ import os
 from dotenv import load_dotenv
 
 # Configuration 
-load_dotenv()  # Load environment variables from a .env file 
+load_dotenv()  
 API_KEY = os.getenv("OPENWEATHER_API_KEY")
 
 # Paths: everything stays in the same folder as this script

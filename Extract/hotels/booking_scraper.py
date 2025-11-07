@@ -29,7 +29,7 @@ import os
 class HotelsSpider(scrapy.Spider):
     name = "hotels_description"
 
-    # Predefined list of locations (35 tourist cities in France)
+    # Predefined list of locations 
     locations = [
         "Le+Mont-Saint-Michel", "Saint-Malo", "Bayeux", "Le+Havre", "Rouen", "Paris", "Amiens",
         "Lille", "Strasbourg", "Chateau+du+Haut+Koenigsbourg", "Colmar", "Eguisheim", "Besancon",
@@ -79,7 +79,7 @@ class HotelsSpider(scrapy.Spider):
         }
 
 # Write output under <script_dir>/data/ 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))     # folder of this script
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))    
 DATA_DIR = os.path.join(BASE_DIR, "data")
 os.makedirs(DATA_DIR, exist_ok=True)                      # create if missing
 

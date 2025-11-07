@@ -26,7 +26,7 @@ import aiohttp
 import asyncio
 import json
 import logging
-from typing import Tuple, Dict, Union
+from typing import Union
 import os
 
 # Consistent paths: JSON files live next to this script 
