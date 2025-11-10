@@ -1,7 +1,7 @@
 <h1 align="center">Jedha's ML Engineer Certificate</h1>
 <h2 align="center">Bloc 1 : Construire et gérer une infrastructure de données</h2>
 
-<p align="center"><strong>Une étude de cas :</strong></p>
+<p align="center"><strong>étude de cas :</strong></p>
 
 <p align="center">
   Projet Kayak — <em>Infrastructure & Pipeline de Données pour la Recommandation Touristique</em><br>
