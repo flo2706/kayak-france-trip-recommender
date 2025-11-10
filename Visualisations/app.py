@@ -46,9 +46,7 @@ def load_data(path: str) -> pd.DataFrame:
     df = pd.read_csv(path, encoding="utf-8-sig")
 
     # Keep only rows with rating and valid coordinates.
-    df = df.dropna(
-        subset=["hotel_rating", "hotel_latitude", "hotel_longitude"]
-    )
+    df = df.dropna(subset=["hotel_rating", "hotel_latitude", "hotel_longitude"])
     df["hotel_rating"] = pd.to_numeric(df["hotel_rating"], errors="coerce")
     df = df.dropna(subset=["hotel_rating"])
     return df
@@ -67,10 +65,7 @@ with st.sidebar:
     top_n = st.slider("Nombre d'hôtels", 5, 25, 20, 5)
 
 # Filter & sort
-city_df = (
-    df[df["city_name"] == selected_city]
-    .sort_values(by="hotel_rating", ascending=False)
-)
+city_df = df[df["city_name"] == selected_city].sort_values(by="hotel_rating", ascending=False)
 city_df = city_df[city_df["hotel_rating"] >= min_rating].head(top_n)
 
 # Empty state
@@ -95,9 +90,7 @@ bounds = city_df[["hotel_latitude", "hotel_longitude"]].values.tolist()
 hotel_map.fit_bounds(bounds)
 
 # Cluster markers only if many points.
-cluster_parent = (
-    MarkerCluster().add_to(hotel_map) if nb_hotels > 10 else hotel_map
-)
+cluster_parent = MarkerCluster().add_to(hotel_map) if nb_hotels > 10 else hotel_map
 
 for _, row in city_df.iterrows():
     name = row.get("hotel_name", "Unknown Hotel")
@@ -107,9 +100,7 @@ for _, row in city_df.iterrows():
 
     safe_name = html.escape(str(name))
     safe_desc_raw = html.escape(str(desc))
-    safe_desc = safe_desc_raw[:300] + (
-        "..." if len(safe_desc_raw) > 300 else ""
-    )
+    safe_desc = safe_desc_raw[:300] + ("..." if len(safe_desc_raw) > 300 else "")
     rating_txt = f"{rating:.1f}" if pd.notna(rating) else "N/A"
 
     popup_html = f"""

@@ -12,6 +12,7 @@ Notes:
     - Overwrites the object if the key already exists.
     - Re
 """
+
 import os
 from dotenv import load_dotenv
 import boto3
@@ -20,8 +21,9 @@ print("Current working directory:", os.getcwd())
 print("Listing current directory:", os.listdir())
 load_dotenv()
 
-session = boto3.Session(aws_access_key_id=os.environ["AWS_KEY"], 
-                        aws_secret_access_key=os.environ["AWS_SECRET_KEY"])
+session = boto3.Session(
+    aws_access_key_id=os.environ["AWS_KEY"], aws_secret_access_key=os.environ["AWS_SECRET_KEY"]
+)
 
 s3 = session.resource("s3")
 

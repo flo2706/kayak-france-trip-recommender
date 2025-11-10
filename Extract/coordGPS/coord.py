@@ -29,9 +29,9 @@ import logging
 from typing import Union
 import os
 
-# Consistent paths: JSON files live next to this script 
+# Consistent paths: JSON files live next to this script
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-INPUT_FILE = os.path.join(BASE_DIR, "cities.json")        # input list of cities
+INPUT_FILE = os.path.join(BASE_DIR, "cities.json")  # input list of cities
 OUTPUT_FILE = os.path.join(BASE_DIR, "coordinates.json")  # output coordinates
 
 HEADERS = {
@@ -44,7 +44,10 @@ RETRIES = 3
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
 
-async def get_coordinates(session: aiohttp.ClientSession, city: str, semaphore: asyncio.Semaphore) -> tuple[str, dict[str, Union[str, None]]]:
+
+async def get_coordinates(
+    session: aiohttp.ClientSession, city: str, semaphore: asyncio.Semaphore
+) -> tuple[str, dict[str, Union[str, None]]]:
     """
     Query Nominatim for one city (with concurrency limit + retries).
     """
@@ -71,16 +74,19 @@ async def get_coordinates(session: aiohttp.ClientSession, city: str, semaphore: 
                 await asyncio.sleep(1)
     return city, {"error": "Failed after multiple attempts"}
 
+
 def load_cities(filepath: str) -> list:
     """Load cities from JSON file."""
     with open(filepath, "r", encoding="utf-8") as f:
         return json.load(f)
+
 
 def save_results(filepath: str, data: dict):
     """Persist coordinates dict as JSON."""
     with open(filepath, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=4, ensure_ascii=False)
     logger.info(f"Data saved to {filepath}")
+
 
 async def fetch_all_coordinates(cities: list[str]) -> dict:
     """Fetch coordinates concurrently for all cities."""
@@ -94,11 +100,13 @@ async def fetch_all_coordinates(cities: list[str]) -> dict:
             logger.info(f"{city} → {coords}")
     return results
 
+
 async def main():
     """1) load cities, 2) fetch coords, 3) save results."""
     cities = load_cities(INPUT_FILE)
     coordinates = await fetch_all_coordinates(cities)
     save_results(OUTPUT_FILE, coordinates)
+
 
 if __name__ == "__main__":
     asyncio.run(main())
