@@ -1,7 +1,4 @@
-<h1 align="center">Jedha's ML Engineer Certificate</h1>
-<h2 align="center">Bloc 1 : Construire et gérer une infrastructure de données</h2>
-
-<p align="center"><strong>Étude de cas :</strong></p>
+<h1 align="center">Kayak France Trip Recommender</h1>
 
 <p align="center">
   Projet Kayak — <em>Infrastructure & Pipeline de Données pour la Recommandation Touristique</em><br>
@@ -9,88 +6,70 @@
 
 ---
 
-## Contexte du projet
+Ce projet met en place un pipeline de données permettant de recommander les meilleures destinations touristiques en France, à partir de données météo et d'informations hôtelières.
 
-L’objectif du projet est de concevoir une **infrastructure de données automatisée** permettant d’aider l’équipe marketing de **Kayak** à recommander les **meilleures destinations touristiques en France**, en se basant sur :
-
-- Le top 35 des villes à visiter selon **One Week In**,
-- Les **conditions météorologiques** (API OpenWeather),
-- Les **notes et disponibilités des hôtels** (scraping Booking).
-
-Le projet couvre l’ensemble d’un **pipeline ETL complet** :  
-1️⃣ Extraction des données → Scraping Booking + APIs OpenWeather & Nominatim  
-2️⃣ Transformation et nettoyage → Pandas & Python  
-3️⃣ Chargement → AWS S3 (Data Lake) & PostgreSQL sur AWS RDS (Data Warehouse)  
-4️⃣ Visualisation → Streamlit & Plotly
+Il s’agit d’un cas d’usage inspiré de la plateforme **Kayak**, combinant APIs publiques, scraping web et infrastructure cloud.
 
 ---
 
-## Objectifs principaux
+## Problématique
 
-- Mettre en place une **infrastructure cloud scalable** sur AWS (S3 + RDS).
-- Centraliser, nettoyer et structurer les données issues de sources hétérogènes.
-- Créer une **application interactive** permettant d’explorer les meilleurs hôtels par ville.
-- Identifier les **meilleures destinations météo** grâce à un score combiné.
-- Assurer la **conformité RGPD** à toutes les étapes du traitement.
+Comment centraliser et exploiter des données externes (APIs et scraping)
+afin de produire des recommandations fiables et visualisables ?
+
+---
+
+## Architecture du pipeline
+
+1. **Extraction**
+   - Géocodage des villes via Nominatim (OpenStreetMap)
+   - Données météo via l’API OpenWeather (prévisions à 7 jours)
+   - Données hôtelières via scraping Booking.com
+
+2. **Transformation**
+   - Nettoyage et normalisation des données en Python
+   - Harmonisation des identifiants de villes
+   - Contrôles de qualité (types, doublons, valeurs manquantes)
+   - Calcul d’un score météo combiné
+
+3. **Stockage et chargement**
+   - Données nettoyées stockées sur **AWS S3** (conformément aux consignes du projet)
+   - Chargement des données dans **PostgreSQL sur AWS RDS**
+
+4. **Visualisation**
+   - Cartes interactives des meilleurs destinations et hôtels (Plotly)
+   - Application Streamlit pour explorer les hôtels
 
 ---
 
 ## Stack technique
 
-| Catégorie             | Technologies                                               |
-| --------------------- | ---------------------------------------------------------- |
-| **Langage principal** | Python                                                     |
-| **Librairies Data**   | Pandas, Requests, Asyncio, Psycopg2                        |
-| **Scraping & APIs**   | Scrapy, OpenWeather OneCall 3.0, Nominatim (OpenStreetMap) |
-| **Base de données**   | PostgreSQL (hébergée sur AWS RDS)                          |
-| **Data Lake**         | AWS S3                                                     |
-| **Visualisation**     | Plotly & Streamlit                                         |
+| Catégorie | Technologies |
+|---------|-------------|
+| Langage | Python |
+| Traitement de données | Pandas |
+| APIs | OpenWeather, Nominatim |
+| Scraping | Scrapy |
+| Cloud | AWS S3, AWS RDS |
+| Base de données | PostgreSQL |
+| Visualisation | Plotly, Streamlit |
+
 
 ---
 
-## Résultats & visualisations
+## Éthique & conformité
 
-### Application Streamlit
-
-- Visualisation des **meilleurs hôtels par ville** selon les avis clients Booking.
-- Filtres dynamiques : **note minimale** et **nombre d’hôtels à afficher**.
-- Affichage d’une **carte interactive** avec description, note et **lien Booking**.
-
-### Visualisation Plotly
-
-- **Carte météo** des **Top 5 villes françaises** avec le meilleur score météo combiné.
-
-_(Les captures d’écran sont disponibles dans le dossier `/Livrables/maps`.)_
+- Aucune donnée personnelle collectée
+- Le dépôt GitHub contient uniquement des **échantillons (samples)** des données,
+  afin de ne pas exposer l’intégralité des informations scrappées.
+- Données Booking utilisées à des fins pédagogiques et de démonstration
+- Scraping limité et respectueux des ressources
+- Application des principes de minimisation des données
 
 ---
 
-## Conformité RGPD
+## Contexte
 
-- Données **Booking** utilisées en **sample** uniquement.
-- Aucune donnée personnelle n’est stockée ni diffusée.
-- Respect des principes de **minimisation** et de **sécurité** des données.
-
----
-
-## Configuration
-
-Le projet utilise un fichier `.env` pour stocker les clés et identifiants nécessaires :
-
-```ini
-# AWS
-AWS_KEY=VOTRE_AWS_KEY
-AWS_SECRET_KEY=VOTRE_AWS_SECRET_KEY
-
-# OpenWeather
-OPENWEATHER_API_KEY=VOTRE_CLE_API
-
-# PostgreSQL
-DBNAME=postgres
-USERNAME=mon_utilisateur
-PASSWORD=mon_mot_de_passe
-HOSTNAME=mon-instance-rds.amazonaws.com
-PORT=5432
-
-# User-Agent (obligatoire pour Nominatim)
-USER_AGENT=KayakTripPlanner/1.0 (votre_email@example.com)
-```
+Projet réalisé dans le cadre de la certification  
+**« Concepteur Développeur en Sciences des Données » (RNCP 35288 – Jedha)**,
+bloc 1 : "Construire et gérer une infrastructure de données". 
