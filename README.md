@@ -14,8 +14,9 @@ Il s’agit d’un cas d’usage inspiré de la plateforme **Kayak**, combinant 
 
 ## Problématique
 
-Comment centraliser et exploiter des données externes (APIs et scraping)
-afin de produire des recommandations fiables et visualisables ?
+Comment concevoir une infrastructure de données capable
+d’ingérer, structurer et exposer des données hétérogènes
+afin d’aider à la prise de décision touristique ?
 
 ---
 
@@ -39,6 +40,7 @@ afin de produire des recommandations fiables et visualisables ?
 4. **Visualisation**
    - Cartes interactives des meilleurs destinations et hôtels (Plotly)
    - Application Streamlit pour explorer les hôtels
+   - Les visualisations sont disponibles dans le dossier [`Livrables/maps`](Livrables/maps)
 
 ---
 
@@ -60,16 +62,14 @@ afin de produire des recommandations fiables et visualisables ?
 ## Éthique & conformité
 
 - Aucune donnée personnelle collectée
-- Le dépôt GitHub contient uniquement des **échantillons (samples)** des données,
-  afin de ne pas exposer l’intégralité des informations scrappées.
 - Données Booking utilisées à des fins pédagogiques et de démonstration
-- Scraping limité et respectueux des ressources
-- Application des principes de minimisation des données
+- Le dépôt GitHub contient uniquement des **échantillons (samples)** des données,
+  afin de ne pas exposer l’intégralité des informations scrappées (scraping limité et respectueux des ressources)
+- Application des principes de minimisation et de sécurité des données
 
 ---
 
 ## Contexte
 
-Projet réalisé dans le cadre de la certification  
-**« Concepteur Développeur en Sciences des Données » (RNCP 35288 – Jedha)**,
-bloc 1 : "Construire et gérer une infrastructure de données". 
+Projet initialement réalisé dans le cadre de la certification  
+**« Concepteur Développeur en Sciences des Données » (RNCP 35288 – Jedha)** - Bloc 1 : *Construire et gérer une infrastructure de données*. 
