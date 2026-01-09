@@ -1,12 +1,12 @@
 <h1 align="center">Kayak France Trip Recommender</h1>
 
 <p align="center">
-  Projet Kayak — <em>Infrastructure & Pipeline de Données pour la Recommandation Touristique</em><br>
+  <em>Infrastructure & Pipeline de Données pour la Recommandation Touristique</em><br>
 </p>
 
 ---
 
-Ce projet met en place un pipeline de données permettant de recommander les meilleures destinations touristiques en France, à partir de données météo et d'informations hôtelières.
+Ce projet met en place un pipeline de données permettant de recommander les meilleures destinations touristiques en France à partir de données météo et d'informations hôtelières.
 
 Il s’agit d’un cas d’usage inspiré de la plateforme **Kayak**, combinant APIs publiques, scraping web et infrastructure cloud.
 
@@ -38,8 +38,8 @@ afin d’aider à la prise de décision touristique ?
    - Chargement des données dans PostgreSQL sur AWS RDS
 
 4. **Visualisation**
-   - Cartes interactives des meilleurs destinations et hôtels (Plotly)
-   - Application Streamlit pour explorer les hôtels
+   - Cartes interactives des meilleures destinations selon un score météo combiné (Plotly) 
+   - Application Streamlit pour explorer les hôtels les mieux notés
    - Les visualisations sont disponibles dans le dossier [`Livrables/maps`](Livrables/maps)
 
 ---
@@ -61,11 +61,11 @@ afin d’aider à la prise de décision touristique ?
 
 ## Éthique & conformité
 
-- Aucune donnée personnelle collectée
-- Données Booking utilisées à des fins pédagogiques et de démonstration
+- Aucune donnée personnelle collectée.
+- Données Booking utilisées à des fins pédagogiques et de démonstration.
 - Le dépôt GitHub contient uniquement des échantillons (samples) des données,
   afin de ne pas exposer l’intégralité des informations scrappées (scraping limité et respectueux des ressources).
-- Application des principes de minimisation et de sécurité des données
+- Application des principes de minimisation et de sécurité des données.
 
 ---
 
