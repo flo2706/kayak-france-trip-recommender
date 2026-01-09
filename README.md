@@ -34,8 +34,8 @@ afin d’aider à la prise de décision touristique ?
    - Calcul d’un score météo combiné
 
 3. **Stockage et chargement**
-   - Données nettoyées stockées sur **AWS S3** (conformément aux consignes du projet)
-   - Chargement des données dans **PostgreSQL sur AWS RDS**
+   - Données nettoyées stockées sur AWS S3 (conformément aux consignes du projet)
+   - Chargement des données dans PostgreSQL sur AWS RDS
 
 4. **Visualisation**
    - Cartes interactives des meilleurs destinations et hôtels (Plotly)
@@ -63,13 +63,12 @@ afin d’aider à la prise de décision touristique ?
 
 - Aucune donnée personnelle collectée
 - Données Booking utilisées à des fins pédagogiques et de démonstration
-- Le dépôt GitHub contient uniquement des **échantillons (samples)** des données,
-  afin de ne pas exposer l’intégralité des informations scrappées (scraping limité et respectueux des ressources)
+- Le dépôt GitHub contient uniquement des échantillons (samples) des données,
+  afin de ne pas exposer l’intégralité des informations scrappées (scraping limité et respectueux des ressources).
 - Application des principes de minimisation et de sécurité des données
 
 ---
 
 ## Contexte
 
-Projet initialement réalisé dans le cadre de la certification  
-**« Concepteur Développeur en Sciences des Données » (RNCP 35288 – Jedha)** - Bloc 1 : *Construire et gérer une infrastructure de données*. 
+Projet initialement réalisé dans le cadre de la certification **« Concepteur Développeur en Sciences des Données » (RNCP 35288 – Jedha)** - Bloc 1 : *Construire et gérer une infrastructure de données*. 
