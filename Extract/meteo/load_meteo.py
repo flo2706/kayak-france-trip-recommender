@@ -1,16 +1,5 @@
 """
-Weather Extract — OpenWeather One Call 3.0
-
-Summary
-- Fetch a 7-day daily forecast for each city from `coordinates.json`
-  and write a raw, tidy CSV for downstream processing.
-
-Inputs
-- coordinates.json  (city -> {latitude, longitude})
-- OPENWEATHER_API_KEY (env var)
-
-Outputs
-- weather_7_day_forecast.csv  (one row = city × day, UTF-8)
+Weather Extract — OpenWeather One Call 3.0 API
 """
 
 import requests
@@ -20,20 +9,14 @@ from datetime import datetime, UTC
 import os
 from dotenv import load_dotenv
 
-# Configuration
+# Configuration & paths
 load_dotenv()
 API_KEY = os.getenv("OPENWEATHER_API_KEY")
-
-# Paths: everything stays in the same folder as this script
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
-# Input: coordinates file lives in coordGPS/
 COORDS_FILE = os.path.join(BASE_DIR, "../coordGPS/coordinates.json")
-
-# Output: CSV saved directly next to this script
 OUTPUT_CSV = os.path.join(BASE_DIR, "weather_7_day_forecast.csv")
 
-# Load city coordinates (lat/lon)
+# Load city coordinates 
 try:
     with open(COORDS_FILE, "r", encoding="utf-8") as file:
         cities = json.load(file)

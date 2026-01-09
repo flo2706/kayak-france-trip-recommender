@@ -1,24 +1,5 @@
 """
 Hotels Extract — Booking.com (one-time Scrapy spider)
-
-Summary
-- One-off spider that collects hotel information for 35 French destinations:
-  city, hotel name, rating, URL, description, and coordinates.
-
-Inputs
-- Built-in list of 35 destination queries (Booking search pages).
-
-Outputs
-- hotels_descriptions.json  (one record per hotel with core fields)
-
-Workflow
-1) Open each city search page on Booking.
-2) Follow hotel links; extract name, rating, URL, description, coordinates.
-3) Save all results to JSON (UTF-8), a single run.
-
-Notes
-- This spider is no longer used in production; later steps rely on the saved JSON.
-- Booking HTML may change; CSS/XPath selectors can break over time.
 """
 
 import logging

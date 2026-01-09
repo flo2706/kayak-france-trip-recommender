@@ -1,16 +1,5 @@
 """
 Load — Upload final CSV to Amazon S3 (boto3)
-
-Inputs:
-    - Local file: project_Kayak/create_final_csv/hotels_weather_final.csv
-    - Environment: AWS_KEY, AWS_SECRET_KEY (via .env)
-
-Output:
-    - S3 object: s3://flodussartprojectkayak/projectKayack/src/final_ter.csv
-
-Notes:
-    - Overwrites the object if the key already exists.
-    - Re
 """
 
 import os

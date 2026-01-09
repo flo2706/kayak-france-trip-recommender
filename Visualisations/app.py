@@ -1,20 +1,5 @@
 """
 Streamlit app — Top-N Hotels by City
-
-Purpose:
-    - Load the enriched dataset (hotels + coordinates).
-    - Let the user select a city, a minimum rating, and N hotels.
-    - Show hotels on a Folium map with colored markers.
-
-Inputs:
-    - CSV path: default "data/hotels_weather_final_ter.csv"
-
-Output:
-    - Interactive map + UI (no file output)
-
-Notes:
-    - Dataset is cached with st.cache_data.
-    - Marker color: 🟢 ≥ 9.0, 🟠 8.0–8.9, 🔴 < 8.0.
 """
 
 import html
@@ -26,6 +11,7 @@ from folium.plugins import MarkerCluster
 from streamlit_folium import st_folium
 
 
+# Path
 CSV_PATH = "data/hotels_weather_final_ter.csv"
 
 
@@ -122,8 +108,8 @@ for _, row in city_df.iterrows():
         ),
     ).add_to(cluster_parent)
 
-# Render map.
+# Render map
 st_folium(hotel_map, width=1000, height=600)
 
-# Legend.
+# Legend
 st.markdown("**Légende:** 🟢 ≥ 9.0 🟠 8.0–8.9 🔴 < 8.0")
