@@ -71,4 +71,5 @@ afin d’aider à la prise de décision touristique ?
 
 ## Contexte
 
-Projet initialement réalisé dans le cadre de la certification **« Concepteur Développeur en Sciences des Données » (RNCP 35288 – Jedha)** - Bloc 1 : *Construire et gérer une infrastructure de données*. 
+Projet initialement réalisé dans le cadre de la certification **« Concepteur Développeur en Sciences des Données » (RNCP 35288 – Jedha)**
+Bloc 1 : *Construire et gérer une infrastructure de données*. 
