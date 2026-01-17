@@ -6,17 +6,22 @@
 
 ---
 
-Ce projet met en place un pipeline de données permettant de recommander les meilleures destinations touristiques en France à partir de données météo et d'informations hôtelières.
+Ce projet met en place un pipeline de données permettant d’identifier et de recommander
+les meilleures destinations touristiques en France, à partir de données météo
+et d’informations hôtelières.
 
-Il s’agit d’un cas d’usage inspiré de la plateforme **Kayak**, combinant APIs publiques, scraping web et infrastructure cloud.
+Il s’agit d’un cas d’usage inspiré de la plateforme **Kayak**, combinant ingestion de données
+via APIs publiques, scraping web et stockage cloud, dans une logique data engineering.
 
 ---
 
 ## Problématique
 
-Comment concevoir une infrastructure de données capable
-d’ingérer, structurer et exposer des données hétérogènes
-afin d’aider à la prise de décision touristique ?
+Comment concevoir une infrastructure de données capable :
+
+- d’ingérer des sources hétérogènes (APIs, scraping)
+- de structurer et fiabiliser les données
+- et d’exposer des indicateurs utiles à la prise de décision touristique ?
 
 ---
 
@@ -35,7 +40,7 @@ afin d’aider à la prise de décision touristique ?
 
 3. **Stockage et chargement**
    - Données nettoyées stockées sur AWS S3 (conformément aux consignes du projet)
-   - Chargement des données dans PostgreSQL sur AWS RDS
+   - Chargement des données structurées dans PostgreSQL sur AWS RDS
 
 4. **Visualisation**
    - Cartes interactives des meilleures destinations selon un score météo combiné (Plotly) 
@@ -71,5 +76,5 @@ afin d’aider à la prise de décision touristique ?
 
 ## Contexte
 
-Projet initialement réalisé dans le cadre de la certification **« Concepteur Développeur en Sciences des Données » (RNCP 35288 – Jedha)**  
+Projet réalisé dans le cadre de la certification **« Concepteur Développeur en Science des Données » (RNCP 35288 – Jedha)**  
 Bloc 1 : *Construire et gérer une infrastructure de données*. 
